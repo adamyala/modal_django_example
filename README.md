@@ -21,9 +21,9 @@ modal secret create demo-secrets DATABASE_URL=<database url> SECRET_KEY=<a long 
 # collect static files locally to be pushed
 python manage.py collectstatic --no-input
 # deploy web endpoint
-modal app deploy config/modal_wsgi.py
+modal deploy config/modal_wsgi.py
 # deploy scheduled jobs
-modal app deploy config/modal_jobs.py
+modal deploy config/modal_jobs.py
 ```
 
 ### Modal specific files
