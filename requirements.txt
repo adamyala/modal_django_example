@@ -1,0 +1,4 @@
+django
+whitenoise
+modal-client
+psycopg2-binary
