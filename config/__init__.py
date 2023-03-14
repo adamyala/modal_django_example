@@ -9,4 +9,4 @@ image = modal.Image.debian_slim().pip_install_from_requirements("requirements.tx
 # by default, modal will deploy the config/ directory
 # instead, mount and deploy the entire django project
 # /root is the base directory modal puts in the container
-mounts = [modal.Mount(remote_dir="/root", local_dir=".")]
+mounts = [modal.Mount.from_local_dir(local_path=".", remote_path="/root")]
