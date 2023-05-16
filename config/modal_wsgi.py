@@ -10,7 +10,8 @@ from . import image, mounts, secrets
 stub = modal.Stub(name='web')
 
 
-@stub.wsgi(label='django-example', image=image, secret=secrets, mounts=mounts)
+@stub.function(image=image, secret=secrets, mounts=mounts)
+@modal.wsgi_app(label='django-example')
 def app():
     # the label argument of this function will be part of the url
     # this label will result in https://<workspace name>--django-example.modal.run
