@@ -3,7 +3,7 @@ import os
 import modal
 from django.core.wsgi import get_wsgi_application
 
-from . import image, mounts, secrets
+from config import image, mounts, secrets
 
 # the name parameter passed to Stub will be the name of the app
 # in the modal dashboard
@@ -16,7 +16,7 @@ def app():
     # the label argument of this function will be part of the url
     # this label will result in https://<workspace name>--django-example.modal.run
 
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.modal_settings")
+    os.environ.setdefault(key="DJANGO_SETTINGS_MODULE", value="config.modal_settings")
 
     # application instance must be created in this decorated function
     # in order to access secret values like SECRET_KEY
