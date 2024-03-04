@@ -2,11 +2,19 @@
 
 ## Installation and local server
 
+### Run using django tooling
+
 ```shell
 # activate your python virtual environment
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
+```
+
+### Run using modal tooling
+
+```shell
+modal serve config/modal_wsgi.py
 ```
 
 ## Deployment

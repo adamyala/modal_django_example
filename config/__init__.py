@@ -1,7 +1,7 @@
 import modal
 
 # get secret env vars
-secrets = modal.Secret.from_name("demo-secrets")
+secrets = [modal.Secret.from_name("demo-secrets")]
 
 # create image and install dependencies
 image = modal.Image.debian_slim().pip_install_from_requirements("requirements.txt")

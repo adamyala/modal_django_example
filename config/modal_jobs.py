@@ -11,7 +11,7 @@ stub = modal.Stub(name="jobs")
 schedule = modal.Period(hours=1)
 
 
-@stub.function(schedule=schedule, secret=secrets, image=image, mounts=mounts)
+@stub.function(schedule=schedule, secrets=secrets, image=image, mounts=mounts)
 def handle_command():
 
     os.environ.setdefault(key="DJANGO_SETTINGS_MODULE", value="config.modal_settings")

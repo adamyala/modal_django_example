@@ -10,7 +10,7 @@ from config import image, mounts, secrets
 stub = modal.Stub(name='web')
 
 
-@stub.function(image=image, secret=secrets, mounts=mounts)
+@stub.function(image=image, secrets=secrets, mounts=mounts)
 @modal.wsgi_app(label='django-example')
 def app():
     # the label argument of this function will be part of the url
