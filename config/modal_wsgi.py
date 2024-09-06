@@ -5,14 +5,14 @@ from django.core.wsgi import get_wsgi_application
 
 from config import image, mounts, secrets
 
-# the name parameter passed to Stub will be the name of the app
+# the name parameter passed to App will be the name of the app
 # in the modal dashboard
-stub = modal.Stub(name='web')
+app = modal.App(name='web')
 
 
-@stub.function(image=image, secrets=secrets, mounts=mounts)
+@app.function(image=image, secrets=secrets, mounts=mounts)
 @modal.wsgi_app(label='django-example')
-def app():
+def application():
     # the label argument of this function will be part of the url
     # this label will result in https://<workspace name>--django-example.modal.run
 

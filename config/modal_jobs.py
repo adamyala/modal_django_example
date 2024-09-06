@@ -5,13 +5,13 @@ import modal
 
 from config import image, mounts, secrets
 
-# the parameter passed to Stub will be the name of the container
-stub = modal.Stub(name="jobs")
+# the parameter passed to App will be the name of the container
+app = modal.App(name="jobs")
 
 schedule = modal.Period(hours=1)
 
 
-@stub.function(schedule=schedule, secrets=secrets, image=image, mounts=mounts)
+@app.function(schedule=schedule, secrets=secrets, image=image, mounts=mounts)
 def handle_command():
 
     os.environ.setdefault(key="DJANGO_SETTINGS_MODULE", value="config.modal_settings")
